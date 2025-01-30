@@ -1,1 +1,3 @@
-# kea_soft_systems_integration
+# Software Developer: Systems Integration
+Repo for the SI course as part of Kea's Software Developer study
+
