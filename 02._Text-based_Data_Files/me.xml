@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UFT-8"?>
+
+<me>
+	<name>David</name>
+	<age>30</age>
+	<hobbies>
+		<hobby>coding</hobby>
+		<hobby>sleeping</hobby>
+		<hobby>eating</hobby>
+	</hobbies>
+</me>
+
