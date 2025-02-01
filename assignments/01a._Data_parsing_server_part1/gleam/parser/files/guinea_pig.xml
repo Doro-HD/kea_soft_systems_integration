@@ -1,0 +1,13 @@
+<?xml version="1.0"?>'
+
+<guinea-pig>
+	<name>Lille Pil</name>
+	<age>3</age>
+	<likes>
+		<like>Snacks</like>
+		<like>Hay</like>
+		<like>sleeping</like>
+	</likes>
+	<favourite-snack>Dandelion</favourite-snack>
+</guinea-pig>
+
