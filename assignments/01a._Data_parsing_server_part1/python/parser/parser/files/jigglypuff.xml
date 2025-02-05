@@ -1,0 +1,19 @@
+<pokemon>
+  <name>Jigglypuff</name>
+  <type>Fairy/Normal</type>
+  <pokedex_number>039</pokedex_number>
+  <abilities>
+    <ability>Cute Charm</ability>
+    <ability>Competitive</ability>
+  </abilities>
+  <base_stats>
+    <hp>115</hp>
+    <attack>45</attack>
+    <defense>20</defense>
+    <special_attack>45</special_attack>
+    <special_defense>25</special_defense>
+    <speed>20</speed>
+  </base_stats>
+  <evolution>Does not evolve</evolution>
+</pokemon>
+

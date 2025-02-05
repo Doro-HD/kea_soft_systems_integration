@@ -1,0 +1,16 @@
+{
+  "name": "Squirtle",
+  "type": "Water",
+  "pokedex_number": "007",
+  "abilities": ["Torrent", "Rain Dish (Hidden)"],
+  "base_stats": {
+    "hp": 44,
+    "attack": 48,
+    "defense": 65,
+    "special_attack": 50,
+    "special_defense": 50,
+    "speed": 43
+  },
+  "evolution": "Evolves into Wartortle at level 16"
+}
+

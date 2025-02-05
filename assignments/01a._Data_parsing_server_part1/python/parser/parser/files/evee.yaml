@@ -1,0 +1,15 @@
+name: Eevee
+type: Normal
+pokedex_number: 133
+abilities:
+  - Run Away
+  - Adaptability
+base_stats:
+  hp: 55
+  attack: 55
+  defense: 50
+  special_attack: 45
+  special_defense: 50
+  speed: 55
+evolution: Evolves into Vaporeon, Jolteon, or Flareon when exposed to a special stone
+

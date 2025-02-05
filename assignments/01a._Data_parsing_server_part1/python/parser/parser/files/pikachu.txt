@@ -1,0 +1,12 @@
+Name=Pikachu
+Type=Electric
+Pokédex Number=025
+Abilities=Static, Lightning Rod (Hidden)
+HP=35
+Attack=55
+Defense=40
+Special Attack=50
+Special Defense=50
+Speed=90
+Evolution=Evolves from Pichu with high friendship
+
