@@ -3,7 +3,7 @@ import gleam/string
 
 import simplifile
 
-pub opaque type Book {
+pub type Book {
   Book(name: String, author: String, year: String, publisher: String)
 }
 

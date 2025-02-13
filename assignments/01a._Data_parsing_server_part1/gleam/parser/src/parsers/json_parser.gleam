@@ -2,7 +2,7 @@ import gleam/dynamic/decode
 import gleam/json
 import gleam/result
 
-pub opaque type VideoGame {
+pub type VideoGame {
   VideoGame(
     name: String,
     developed_by: String,
@@ -15,7 +15,7 @@ pub opaque type VideoGame {
 
 import simplifile
 
-pub fn parse() {
+pub fn parse() -> Result(VideoGame, String) {
   let file_result = simplifile.read("./files/video_game.json")
   case file_result {
     Ok(json_text) ->

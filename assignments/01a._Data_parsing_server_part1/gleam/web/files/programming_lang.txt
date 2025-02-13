@@ -1,0 +1,5 @@
+name=Gleam
+paradigm=Functional
+is-statically-typed=True
+creator=Louis Pilfold
+

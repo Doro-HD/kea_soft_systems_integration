@@ -4,7 +4,7 @@ import gleam/string
 
 import simplifile
 
-pub opaque type Lang {
+pub type Lang {
   Lang(
     name: String,
     paradigm: String,
