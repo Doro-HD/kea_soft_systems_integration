@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Short Polling</title>
+</head>
+
+<body>
+	<h1>Short Polling</h1>
+
+	<ol id='randomnumbers'></ol>
+
+	<script>
+		const randomNumbersDiv = document.getElementById('randomnumbers');
+
+		const DELAY = 1000;
+		setInterval(poll, DELAY);
+
+		async function poll() {
+			const response = await fetch('/randomnumbers');
+			const result = await response.json();
+
+			for (const num of result.data) {
+				const newLi = document.createElement('li');
+				newLi.textContent = num;
+
+				randomNumbersDiv.appendChild(newLi);
+			}
+			//randomNumbersDiv.textContent = result.data;
+		}
+	</script>
+</body>
+
+</html>
