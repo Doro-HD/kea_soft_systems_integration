@@ -30,4 +30,4 @@ def play_next():
 
     random_index = random.randrange(0, len(games) - 1)
 
-    return games[random_index]
+    return {"Your next game is...": games[random_index].get('name')}
