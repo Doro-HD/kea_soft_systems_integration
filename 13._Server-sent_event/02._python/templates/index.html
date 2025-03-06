@@ -1,0 +1,19 @@
+<html lang='en'>
+
+<head>
+	<title>SSE FastAPI</title>
+</head>
+
+<body>
+	<h1>Hello from FastAPI SSE</h1>
+	<div id='date'></div>
+
+	<script>
+		const divDate = document.getElementById('date');
+
+		const eventSource = new EventSource('/sse');
+		eventSource.onmessage = (event) => divDate.textContent = event.data;
+	</script>
+</body>
+
+</html>

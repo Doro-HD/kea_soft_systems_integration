@@ -1,0 +1,43 @@
+<html>
+
+<head>
+	<title>Server-sent event</title>
+</head>
+
+<body>
+	<h1>Server-sent events</h1>
+
+	<p>Status:</p>
+	<div id='server-sent-status'></div>
+
+	<p>Time:</p>
+	<div id='server-sent-time'></div>
+
+	<script>
+		const serverSentStatusDiv = document.querySelector('div#server-sent-status');
+		const serverSentTimeDiv = document.querySelector('div#server-sent-time');
+
+		const eventSource = new EventSource('/syncrhonizetime');
+		eventSource.addEventListener('message', event => {
+			serverSentTimeDiv.textContent = event.data;
+		});
+
+		eventSource.addEventListener('open', event => {
+			serverSentStatusDiv.textContent = 'Connected';
+		});
+
+		eventSource.addEventListener('error', event => {
+			eventSource.addEventListener("error", (event) => {
+				if (event.target.readyState === EventSource.CLOSED) {
+					serverSentStatusDiv.textContent = 'Connection was closed';
+				} else if (event.target.readyState === EventSource.CONNECTING) {
+					serverSentStatusDiv.textContent = 'Connecting...';
+				} else {
+					serverSentStatusDiv.textContent = 'Error';
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>
