@@ -12,7 +12,7 @@
 		const divDate = document.getElementById('date');
 
 		const eventSource = new EventSource('/sse');
-		eventSource.onmessage = (event) => divDate.textContent = event.data;
+		eventSource.onmessage = (event) => {divDate.textContent = event.data};
 	</script>
 </body>
 
