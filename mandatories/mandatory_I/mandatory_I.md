@@ -10,6 +10,8 @@ Assignments 01a through 03a were all collected into a single project
 [Server sent event example](https://github.com/Doro-HD/kea_soft_systems_integration/tree/main/13._Server-sent_event)
 
 ## 04b
+
+### Exposee documentation
 The below documentation is copied from my logseq graph
 
 - # Documentation
@@ -55,6 +57,9 @@ The below documentation is copied from my logseq graph
 		- The user 'lasse' has the sales_person role
 		- The user 'troels' has the manager role
 	-
+
+### Integrator images
+
 
 
 ## 06a
