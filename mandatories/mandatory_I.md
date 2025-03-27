@@ -10,7 +10,7 @@ Assignments 01a through 03a were all collected into a single project
 [Server sent event example](https://github.com/Doro-HD/kea_soft_systems_integration/tree/main/13._Server-sent_event)
 
 ## 04b
-[Documentation image not found](./si-04b_doc.png)
+[Documentation image not found](https://github.com/Doro-HD/kea_soft_systems_integration/blob/main/mandatories/si-04b_doc.png)
 
 ## 06a
 
