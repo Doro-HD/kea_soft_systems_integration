@@ -60,6 +60,11 @@ The below documentation is copied from my logseq graph
 
 ### Integrator images
 
+(https://github.com/Doro-HD/kea_soft_systems_integration/blob/main/mandatories/mandatory_I/read_only_table.png)
+
+(https://github.com/Doro-HD/kea_soft_systems_integration/blob/main/mandatories/mandatory_I/write_only_table.png)
+
+(https://github.com/Doro-HD/kea_soft_systems_integration/blob/main/mandatories/mandatory_I/read_only_table.png)
 
 
 ## 06a
