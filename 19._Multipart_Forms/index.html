@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>Forms</title>
+</head>
+
+<body>
+	<h1>Forms </h1>
+
+	<div>
+		<h2>Basic Form Express</h2>
+
+		<form action='http://localhost:8080/form' method='POST'>
+			<div>
+				<label for='username'>Username</label>
+				<input id='username' type='text' name='username' placeholder='username'>
+			</div>
+
+			<div>
+				<label for='password'>Password</label>
+				<input id='password' type='password' name='password' placeholder='password'>
+			</div>
+
+			<button type='submit'>Submit</button>
+		</form>
+	</div>
+
+	<div>
+		<h2>Basic Form FastAPI</h2>
+
+		<form action='http://localhost:8000/form' method='POST'>
+			<div>
+				<label for='username'>Username</label>
+				<input id='username' type='text' name='username' placeholder='username'>
+			</div>
+
+			<div>
+				<label for='password'>Password</label>
+				<input id='password' type='password' name='password' placeholder='password'>
+			</div>
+
+			<button type='submit'>Submit</button>
+		</form>
+	</div>
+
+	<div>
+		<h2>Express File Form</h2>
+
+		<form action='http://localhost:8080/fileform' method='POST' enctype='multipart/form-data'>
+			<div>
+				<label for='file'>File</label>
+				<!-- use the multiple attribute to allow for uploading multiple files -->
+				<!-- correct on backend to allow there as well, using array instead of single -->
+				<input id='file' type='file' name='file' accept='image/*'>
+			</div>
+
+			<div>
+				<label for='description'>Description</label>
+				<input id='description' type='text' name='description' placeholder='Description'>
+			</div>
+
+			<button type='submit'>Submit</button>
+		</form>
+	</div>
+
+	<div>
+		<h2>FastAPI File Form</h2>
+
+		<form action='http://localhost:8000/fileform' method='POST' enctype='multipart/form-data'>
+			<div>
+				<label for='file'>File</label>
+				<!-- use the multiple attribute to allow for uploading multiple files -->
+				<!-- correct on backend to allow there as well, using array instead of single -->
+				<input id='file' type='file' name='file' accept='image/*'>
+			</div>
+
+			<div>
+				<label for='description'>Description</label>
+				<input id='description' type='text' name='description' placeholder='Description'>
+			</div>
+
+			<button type='submit'>Submit</button>
+		</form>
+	</div>
+
+	<script>
+		const fileInput = document.getElementById('file');
+
+		/* unsafe filter as it exists on the client
+		fileInput.addEventListener('change', (event) => {
+			const file = event.target.files[0];
+			const validTypes = ['image/png', 'image/svg', 'image/jpeg'];
+
+			if (!validTypes.includes(file.type)) {
+				alert('Not a valid type');
+				fileInput.value = '';
+
+				return;
+			}
+
+			const maxsize = 10 * 1024 * 1024;
+			if (file.size > maxsize) {
+				alert('File is too big, max size is ' + maxsize + ' bytes.');
+				fileInput.value = '';
+
+				return;
+			}
+		});
+		*/
+	</script>
+</body>
+
+</html>
