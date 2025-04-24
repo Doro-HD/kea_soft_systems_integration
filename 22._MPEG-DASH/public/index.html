@@ -14,10 +14,10 @@
         const videoElement = document.getElementById('video');
         const player = new shaka.Player(videoElement);
 
-        player.addEventListener('adaptation', () => {
-            const variant = player.getVaraintTracks().find(track => track.active);
-            console.log(`[Shaka] Adapated to ${variant.height}p (${variant.bandwith / 10000} mbps)`);
-        })
+        player.addEventListener("adaptation", () => {
+            const variant = player.getVariantTracks().find((track) => track.active);
+            console.log(`[SHAKA] Adapted to ${variant.height}p ${variant.bandwidth}bps`);
+        });
 
         document.addEventListener('DOMContentLoaded', init);
 
