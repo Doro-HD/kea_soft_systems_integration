@@ -93,6 +93,8 @@ web_modules/
 # Vite build
 .vite
 
+.wrangler
+
 # Next.js build output
 .next
 out
