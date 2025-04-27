@@ -1,0 +1,41 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "11a-_auth_integration",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-04-24",
+  //"assets": {
+    //"directory": "src/public"
+  //},
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "AUTH_COOKIE_NAME": "auth-token"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "KEA_SI",
+      "id": "a8caf424ea0d4077849d5eb54b924bff"
+    }
+  ],
+  // "r2_buckets": [
+  //   {
+  //     "binding": "MY_BUCKET",
+  //     "bucket_name": "my-bucket"
+  //   }
+  // ],
+  // "d1_databases": [
+  //   {
+  //     "binding": "MY_DB",
+  //     "database_name": "my-database",
+  //     "database_id": ""
+  //   }
+  // ],
+  // "ai": {
+  //   "binding": "AI"
+  // },
+  // "observability": {
+  //   "enabled": true,
+  //   "head_sampling_rate": 1
+  // }
+}
