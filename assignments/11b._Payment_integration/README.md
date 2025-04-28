@@ -1,0 +1,2 @@
+# 11b - Payment integration
+This assignment had me create an integration using a payment solution, I choose stripe. There is a single page in this app that uses a payment link registered to my stripe account.
