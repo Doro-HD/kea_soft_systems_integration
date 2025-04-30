@@ -8,19 +8,10 @@ const roomsTable = pgTable('rooms', {
 }, (table) => [
   foreignKey({
     name: 'fk_user_id',
-    columns: [roomsTable.tenant],
+    columns: [table.tenantId],
     foreignColumns: [usersTable.id]
   })
 ]);
-
-const roomsRelation = relations(roomsTable, ({ one }) => {
-  return {
-    user: one(usersTable, {
-      fields: [roomsTable.tenantId],
-      references: [usersTable.id]
-    })
-  }
-});
 
 const userRoles = pgEnum("role", ["tenant", "superintendent", 'admin']);
 
@@ -28,13 +19,6 @@ const usersTable = pgTable("users", {
   id: text("id").primaryKey(),
   name: text("name").notNull(),
   role: userRoles("role").notNull(),
-});
-
-const usersRelation = relations(usersTable, ({ one, many }) => {
-    return {
-        room: one(roomsTable),
-        complaints: many(complaintsTable)
-    }
 });
 
 
@@ -46,27 +30,14 @@ const complaintsTable = pgTable("complaints", {
 }, (table) => [
     foreignKey({
         name: "fk_from_user",
-        columns: [complaintsTable.fromUser],
-        foreignColumns: [usersTable.id]
+        columns: [table.fromUser],
+        foreignColumns: [usersTable.id],
     }),
     foreignKey({
-        name: "fk_from_user",
-        columns: [complaintsTable.fromUser],
+        name: "fk_against_user",
+        columns: [table.againstUser],
         foreignColumns: [usersTable.id]
     })
 ]);
 
-const complaintsRelation = relations(complaintsTable, ({ one }) => {
-    return {
-        fromUser: one(usersTable, {
-            fields: [complaintsRelation.fromUser],
-            references: [usersTable.id]
-        }),
-        againstUser: one(usersTable, {
-            fields: [complaintsRelation.fromUser],
-            references: [usersTable.id]
-        })
-    }
-})
-
-export { complaintsTable, complaintsRelation, userRoles, usersTable, usersRelation, roomsTable, roomsRelation };
+export { complaintsTable, userRoles, usersTable, roomsTable };

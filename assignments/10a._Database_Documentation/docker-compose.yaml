@@ -4,7 +4,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./db_volume:/var/lib/postgresql/data
+      - /home/doro-hd/Docker/volumes/kea_si_04b:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: si-10a
       POSTGRES_USER: si-10a
