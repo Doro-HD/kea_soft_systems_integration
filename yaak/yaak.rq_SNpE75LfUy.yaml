@@ -1,0 +1,30 @@
+type: http_request
+model: http_request
+id: rq_SNpE75LfUy
+createdAt: 2025-05-01T20:35:57.850177104
+updatedAt: 2025-05-01T20:38:17.375859596
+workspaceId: wk_TVaGubpbwd
+folderId: fl_cyMCvXpfkd
+authentication: {}
+authenticationType: null
+body:
+  query: |-
+    mutation {
+      addTenant(userId: "7feb1e80-20d1-4abb-8575-1722f884b858", roomId: "204c52ff-1398-4fa2-b9eb-bcc1fabd2191") {
+        id
+        roomNumber
+        userId
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: b5EhuhxvAj
+method: POST
+name: add tenant
+sortPriority: 2000.0
+url: localhost:8787/graphql
+urlParameters: []

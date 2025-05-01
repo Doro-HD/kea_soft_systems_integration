@@ -1,16 +1,22 @@
 type: http_request
 model: http_request
-id: rq_7pfW6CMvCm
-createdAt: 2025-05-01T07:30:51.004311903
-updatedAt: 2025-05-01T13:48:45.787458159
+id: rq_DWXkcskyxW
+createdAt: 2025-05-01T20:37:10.384746149
+updatedAt: 2025-05-01T20:37:56.907939241
 workspaceId: wk_TVaGubpbwd
-folderId: fl_vGLNo8GLbJ
+folderId: fl_cyMCvXpfkd
 authentication: {}
 authenticationType: null
 body:
   query: |-
     {
-      hello
+      rooms {
+        id
+        roomNumber
+        user {
+          name
+        }
+      }
     }
 bodyType: graphql
 description: ''
@@ -18,9 +24,9 @@ headers:
 - enabled: true
   name: Content-Type
   value: application/json
-  id: NwwHxBJn2W
+  id: b6Nzrp28m6
 method: POST
-name: basic
+name: get rooms
 sortPriority: 0.0
-url: localhost:8080/graphql
+url: localhost:8787/graphql
 urlParameters: []

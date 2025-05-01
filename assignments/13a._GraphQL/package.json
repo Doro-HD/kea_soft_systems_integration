@@ -1,0 +1,32 @@
+{
+  "name": "13a._graphql",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "pylon build && wrangler deploy",
+    "dev": "pylon dev -c \"wrangler dev\"",
+    "cf-typegen": "wrangler types",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply kea_si_13a --local",
+    "db:migrate:remote": "wrangler d1 migrations apply kea_si_13a --remote"
+  },
+  "dependencies": {
+    "@getcronit/pylon": "^2.0.0",
+    "@types/node": "^22.15.3",
+    "drizzle-kit": "^0.31.0",
+    "drizzle-orm": "^0.43.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.4.5",
+    "@cloudflare/workers-types": "^4.20240903.0",
+    "@faker-js/faker": "^9.7.0",
+    "@getcronit/pylon-dev": "^1.0.0",
+    "typescript": "^5.5.2",
+    "wrangler": "^3.60.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getcronit/pylon.git"
+  },
+  "homepage": "https://pylon.cronit.io"
+}

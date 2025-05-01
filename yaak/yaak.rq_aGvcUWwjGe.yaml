@@ -1,0 +1,44 @@
+type: http_request
+model: http_request
+id: rq_aGvcUWwjGe
+createdAt: 2025-05-01T13:48:48.792062696
+updatedAt: 2025-05-01T20:39:58.627098401
+workspaceId: wk_TVaGubpbwd
+folderId: fl_vBb3DXY4o5
+authentication: {}
+authenticationType: null
+body:
+  query: |
+    {
+      users {
+        id
+        name
+        room {
+          roomNumber
+        }
+        fromComplaints {
+          againstUser {
+            name
+          }
+          description
+        }
+        againstComplaints {
+          fromUser {
+            name
+          }
+          description
+        }
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: MKyFdWSwfU
+method: POST
+name: get users
+sortPriority: 0.0
+url: localhost:8787/graphql
+urlParameters: []

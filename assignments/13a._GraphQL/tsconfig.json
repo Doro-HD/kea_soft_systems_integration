@@ -1,0 +1,10 @@
+{
+  "extends": "@getcronit/pylon/tsconfig.pylon.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "include": ["pylon.d.ts", "worker-configuration.d.ts", "src/**/*.ts"]
+}

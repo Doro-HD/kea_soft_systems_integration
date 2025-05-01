@@ -1,0 +1,29 @@
+type: http_request
+model: http_request
+id: rq_4CJ3SZpDeX
+createdAt: 2025-05-01T19:08:12.501475947
+updatedAt: 2025-05-01T20:44:01.506523146
+workspaceId: wk_TVaGubpbwd
+folderId: fl_vBb3DXY4o5
+authentication: {}
+authenticationType: null
+body:
+  query: |-
+    mutation {
+        createUser(name: "Gustav", socialSecurityNumber: "000000-0000") {
+          name
+          socialSecurityNumber
+        }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: 63CRThZG2U
+method: POST
+name: create user
+sortPriority: 1000.0
+url: localhost:8787/graphql
+urlParameters: []

@@ -1,0 +1,29 @@
+type: http_request
+model: http_request
+id: rq_hpwS28q9Sv
+createdAt: 2025-05-01T11:56:18.302594080
+updatedAt: 2025-05-01T12:44:45.956165109
+workspaceId: wk_TVaGubpbwd
+folderId: fl_CQwzasPYKp
+authentication: {}
+authenticationType: null
+body:
+  query: |
+    {
+      users {
+        name
+        socialSecurityNumber
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: hRckdtIiMT
+method: POST
+name: ''
+sortPriority: 1999.9999
+url: localhost:8787/graphql
+urlParameters: []

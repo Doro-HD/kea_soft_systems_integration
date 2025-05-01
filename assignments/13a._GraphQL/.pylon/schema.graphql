@@ -1,0 +1,104 @@
+type Query {
+rooms: [Rooms!]!
+users: [Users!]!
+}
+type Rooms {
+id: String!
+roomNumber: String!
+userId: String
+isVacant: Any!
+user: User
+}
+type User {
+id: String!
+name: String!
+socialSecurityNumber: String!
+fromComplaints: [FromComplaints!]!
+againstComplaints: [AgainstComplaints!]!
+}
+type FromComplaints {
+id: String!
+description: String!
+fromUserId: String!
+againstUserId: String!
+againstUser: AgainstUser!
+}
+type AgainstUser {
+id: String!
+name: String!
+socialSecurityNumber: String!
+room: Room
+}
+type Room {
+id: String!
+roomNumber: String!
+userId: String
+}
+type AgainstComplaints {
+id: String!
+description: String!
+fromUserId: String!
+againstUserId: String!
+fromUser: FromUser!
+}
+type FromUser {
+id: String!
+name: String!
+socialSecurityNumber: String!
+room: Room
+}
+type Users {
+id: String!
+name: String!
+socialSecurityNumber: String!
+room: Room
+fromComplaints: [FromComplaints_1!]!
+againstComplaints: [AgainstComplaints_1!]!
+}
+type FromComplaints_1 {
+id: String!
+description: String!
+fromUserId: String!
+againstUserId: String!
+againstUser: AgainstUser_1!
+}
+type AgainstUser_1 {
+id: String!
+name: String!
+socialSecurityNumber: String!
+}
+type AgainstComplaints_1 {
+id: String!
+description: String!
+fromUserId: String!
+againstUserId: String!
+fromUser: AgainstUser_1!
+}
+type Mutation {
+createRoom(roomNumber: String!): CreateRoom!
+addTenant(userId: String!, roomId: String!): CreateRoom!
+createUser(name: String!, socialSecurityNumber: String!): CreateUser!
+deleteUser(userId: String!): CreateUser!
+}
+type CreateRoom {
+id: String!
+roomNumber: String!
+userId: String
+}
+type CreateUser {
+id: String!
+name: String!
+socialSecurityNumber: String!
+}
+scalar ID
+scalar Int
+scalar Float
+scalar Number
+scalar Any
+scalar Void
+scalar Object
+scalar File
+scalar Date
+scalar JSON
+scalar String
+scalar Boolean

@@ -1,0 +1,29 @@
+type: http_request
+model: http_request
+id: rq_Uymrfd2yBH
+createdAt: 2025-05-01T20:21:01.216264328
+updatedAt: 2025-05-01T20:37:18.660571150
+workspaceId: wk_TVaGubpbwd
+folderId: fl_cyMCvXpfkd
+authentication: {}
+authenticationType: null
+body:
+  query: |-
+    mutation {
+      createRoom(roomNumber: "328") {
+        id
+        roomNumber
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: CXU3CXmnxZ
+method: POST
+name: create room
+sortPriority: 1000.0
+url: localhost:8787/graphql
+urlParameters: []
