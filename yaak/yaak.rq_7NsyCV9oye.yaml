@@ -1,0 +1,28 @@
+type: http_request
+model: http_request
+id: rq_7NsyCV9oye
+createdAt: 2025-05-01T08:22:56.349812152
+updatedAt: 2025-05-01T08:23:43.418703314
+workspaceId: wk_TVaGubpbwd
+folderId: fl_CQwzasPYKp
+authentication: {}
+authenticationType: null
+body:
+  query: |-
+    {
+      movies {
+        title
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: QtDcuq5urT
+method: POST
+name: basic
+sortPriority: 0.0
+url: localhost:8080/graphql
+urlParameters: []

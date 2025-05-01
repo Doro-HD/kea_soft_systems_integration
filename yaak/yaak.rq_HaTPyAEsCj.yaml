@@ -1,0 +1,28 @@
+type: http_request
+model: http_request
+id: rq_HaTPyAEsCj
+createdAt: 2025-05-01T08:20:14.864936362
+updatedAt: 2025-05-01T08:23:39.858684002
+workspaceId: wk_TVaGubpbwd
+folderId: fl_CQwzasPYKp
+authentication: {}
+authenticationType: null
+body:
+  query: |-
+    mutation {
+      addMovie(title: "Pass", actorIds:[1, 2]) {
+        title
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: cuYfgvKGeb
+method: POST
+name: mutation
+sortPriority: 2000.0
+url: localhost:8080/graphql
+urlParameters: []

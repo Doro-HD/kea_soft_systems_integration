@@ -1,0 +1,37 @@
+type: http_request
+model: http_request
+id: rq_n8ouPgvyaq
+createdAt: 2025-05-01T08:11:43.290342437
+updatedAt: 2025-05-01T08:23:39.858597329
+workspaceId: wk_TVaGubpbwd
+folderId: fl_CQwzasPYKp
+authentication: {}
+authenticationType: null
+body:
+  query: |
+    {
+      movies {
+        title
+        actors {
+          name
+          movies {
+            title
+            actors {
+              name
+            }
+          }
+        }
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: N3dufUPnsS
+method: POST
+name: nested example
+sortPriority: 1000.0
+url: localhost:8080/graphql
+urlParameters: []

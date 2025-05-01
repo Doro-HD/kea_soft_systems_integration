@@ -1,0 +1,10 @@
+type: workspace
+model: workspace
+id: wk_TVaGubpbwd
+createdAt: 2025-05-01T07:30:37.102210514
+updatedAt: 2025-05-01T07:30:37.102213377
+name: kea_si
+description: ''
+settingValidateCertificates: true
+settingFollowRedirects: true
+settingRequestTimeout: 0
