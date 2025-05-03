@@ -1,13 +1,19 @@
-import { InferInsertModel, InferSelectModel } from "drizzle-orm";
-import { roomsTable, usersTable } from "./schema";
+import { complaintsTable, roomsTable, usersTable } from "./schema";
 
-type TUsers = InferSelectModel<typeof usersTable>;
-type TUsersInsert = Omit<InferInsertModel<typeof usersTable>, 'id'>;
+type TUsers = typeof usersTable.$inferSelect;
+type TUsersInsert = Omit<typeof usersTable.$inferInsert, "id">;
 
-type TRoomsInsert = Omit<InferInsertModel<typeof roomsTable>, 'id'>;
+type TRooms = typeof roomsTable.$inferSelect;
+type TRoomsInsert = Omit<typeof roomsTable.$inferInsert, "id">;
+
+type TComplaints = typeof complaintsTable.$inferSelect;
+type TComplaintsInsert = Omit<typeof complaintsTable.$inferInsert, "id">;
 
 export type {
-    TUsers,
-    TUsersInsert,
-    TRoomsInsert
+  TComplaints,
+  TComplaintsInsert,
+  TRooms,
+  TRoomsInsert,
+  TUsers,
+  TUsersInsert,
 };

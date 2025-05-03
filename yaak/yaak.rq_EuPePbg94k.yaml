@@ -1,20 +1,22 @@
 type: http_request
 model: http_request
-id: rq_DWXkcskyxW
-createdAt: 2025-05-01T20:37:10.384746149
-updatedAt: 2025-05-03T13:13:52.550410682
+id: rq_EuPePbg94k
+createdAt: 2025-05-02T09:44:23.546176797
+updatedAt: 2025-05-03T13:06:25.361649364
 workspaceId: wk_TVaGubpbwd
-folderId: fl_cyMCvXpfkd
+folderId: fl_VHUv65Kefr
 authentication: {}
 authenticationType: null
 body:
-  query: |-
+  query: |
     {
-      rooms(roomNumber: "326") {
-        roomNumber
-        isVacant
-        user {
-          name
+      complaints {
+        description
+        userAssociations {
+          associationKind
+          user {
+            name
+          }
         }
       }
     }
@@ -24,9 +26,9 @@ headers:
 - enabled: true
   name: Content-Type
   value: application/json
-  id: b6Nzrp28m6
+  id: zf0Yu7KrM9
 method: POST
-name: get rooms
+name: get complaints
 sortPriority: 0.0
 url: localhost:8787/graphql
 urlParameters: []

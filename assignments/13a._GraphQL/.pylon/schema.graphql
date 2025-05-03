@@ -1,89 +1,91 @@
 type Query {
-rooms: [Rooms!]!
+complaints: [Complaints!]!
+rooms(roomNumber: String): [Rooms!]!
 users: [Users!]!
 }
-type Rooms {
+type Complaints {
 id: String!
-roomNumber: String!
-userId: String
-isVacant: Any!
-user: User
+description: String!
+userAssociations: [UserAssociations!]!
+}
+type UserAssociations {
+id: String!
+userId: String!
+complaintId: String!
+associationKind: COMPLAINANT_COMPLAINEE!
+user: User!
+complaint: Complaint!
 }
 type User {
 id: String!
 name: String!
 socialSecurityNumber: String!
-fromComplaints: [FromComplaints!]!
-againstComplaints: [AgainstComplaints!]!
 }
-type FromComplaints {
+type Complaint {
 id: String!
 description: String!
-fromUserId: String!
-againstUserId: String!
-againstUser: AgainstUser!
 }
-type AgainstUser {
-id: String!
-name: String!
-socialSecurityNumber: String!
-room: Room
-}
-type Room {
+type Rooms {
+isVacant: Boolean!
+user: User_1
+complaints: Complaints_1!
 id: String!
 roomNumber: String!
 userId: String
 }
-type AgainstComplaints {
-id: String!
-description: String!
-fromUserId: String!
-againstUserId: String!
-fromUser: FromUser!
-}
-type FromUser {
+type User_1 {
 id: String!
 name: String!
 socialSecurityNumber: String!
-room: Room
+}
+type Complaints_1 {
+kind: COMPLAINANT_COMPLAINEE
+id: String
+description: String
 }
 type Users {
 id: String!
 name: String!
 socialSecurityNumber: String!
 room: Room
-fromComplaints: [FromComplaints_1!]!
-againstComplaints: [AgainstComplaints_1!]!
+complaintAssociations: [ComplaintAssociations!]!
 }
-type FromComplaints_1 {
+type Room {
 id: String!
-description: String!
-fromUserId: String!
-againstUserId: String!
-againstUser: AgainstUser_1!
+userId: String
+roomNumber: String!
 }
-type AgainstUser_1 {
+type ComplaintAssociations {
 id: String!
-name: String!
-socialSecurityNumber: String!
-}
-type AgainstComplaints_1 {
-id: String!
-description: String!
-fromUserId: String!
-againstUserId: String!
-fromUser: AgainstUser_1!
+userId: String!
+complaintId: String!
+associationKind: COMPLAINANT_COMPLAINEE!
+user: User!
+complaint: Complaint!
 }
 type Mutation {
+fileComplaint(description: String!, complainantIds: [String!]!, complaineeIds: [String!]!): FileComplaint!
 createRoom(roomNumber: String!): CreateRoom!
 addTenant(userId: String!, roomId: String!): CreateRoom!
 createUser(name: String!, socialSecurityNumber: String!): CreateUser!
 deleteUser(userId: String!): CreateUser!
 }
+type FileComplaint {
+complainants: [Complainants!]!
+complainee: [Complainants!]!
+id: String!
+description: String!
+}
+type Complainants {
+id: String!
+userId: String!
+complaintId: String!
+associationKind: COMPLAINANT_COMPLAINEE!
+}
 type CreateRoom {
 id: String!
-roomNumber: String!
 userId: String
+roomNumber: String!
 }
 type CreateUser {
 id: String!
@@ -102,3 +104,7 @@ scalar Date
 scalar JSON
 scalar String
 scalar Boolean
+enum COMPLAINANT_COMPLAINEE {
+	complainant
+	complainee
+}

@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_Uymrfd2yBH
 createdAt: 2025-05-01T20:21:01.216264328
-updatedAt: 2025-05-01T20:37:18.660571150
+updatedAt: 2025-05-02T10:06:23.504080102
 workspaceId: wk_TVaGubpbwd
 folderId: fl_cyMCvXpfkd
 authentication: {}
@@ -10,7 +10,7 @@ authenticationType: null
 body:
   query: |-
     mutation {
-      createRoom(roomNumber: "328") {
+      createRoom(roomNumber: "515") {
         id
         roomNumber
       }

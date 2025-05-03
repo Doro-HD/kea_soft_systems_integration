@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_aGvcUWwjGe
 createdAt: 2025-05-01T13:48:48.792062696
-updatedAt: 2025-05-01T20:39:58.627098401
+updatedAt: 2025-05-03T13:12:16.374589286
 workspaceId: wk_TVaGubpbwd
 folderId: fl_vBb3DXY4o5
 authentication: {}
@@ -16,17 +16,14 @@ body:
         room {
           roomNumber
         }
-        fromComplaints {
-          againstUser {
+        complaintAssociations {
+          associationKind
+          user {
             name
           }
-          description
-        }
-        againstComplaints {
-          fromUser {
-            name
+          complaint {
+            description
           }
-          description
         }
       }
     }

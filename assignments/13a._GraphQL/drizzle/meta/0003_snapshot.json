@@ -1,8 +1,8 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "6e34e720-9766-445b-8bdd-e6c011b4da76",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "75c5d722-b9aa-4a3f-8b15-15d4e38f4ddb",
+  "prevId": "b2e2ce5e-9701-4f11-98b4-b782f67a86ce",
   "tables": {
     "complaints": {
       "name": "complaints",
@@ -11,20 +11,6 @@
           "name": "id",
           "type": "text",
           "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "from_user_id": {
-          "name": "from_user_id",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "against_user_id": {
-          "name": "against_user_id",
-          "type": "text",
-          "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
@@ -37,13 +23,44 @@
         }
       },
       "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "complaints_user_association": {
+      "name": "complaints_user_association",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "complainant_id": {
+          "name": "complainant_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "complainee_id": {
+          "name": "complainee_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
       "foreignKeys": {
-        "fk_from_user_id": {
-          "name": "fk_from_user_id",
-          "tableFrom": "complaints",
+        "fk_complainant_id": {
+          "name": "fk_complainant_id",
+          "tableFrom": "complaints_user_association",
           "tableTo": "users",
           "columnsFrom": [
-            "from_user_id"
+            "complainant_id"
           ],
           "columnsTo": [
             "id"
@@ -51,12 +68,12 @@
           "onDelete": "no action",
           "onUpdate": "no action"
         },
-        "fk_against_user_id": {
-          "name": "fk_against_user_id",
-          "tableFrom": "complaints",
+        "fk_complainee_id": {
+          "name": "fk_complainee_id",
+          "tableFrom": "complaints_user_association",
           "tableTo": "users",
           "columnsFrom": [
-            "against_user_id"
+            "complainee_id"
           ],
           "columnsTo": [
             "id"
@@ -94,7 +111,15 @@
           "autoincrement": false
         }
       },
-      "indexes": {},
+      "indexes": {
+        "rooms_room_number_unique": {
+          "name": "rooms_room_number_unique",
+          "columns": [
+            "room_number"
+          ],
+          "isUnique": true
+        }
+      },
       "foreignKeys": {
         "fk_user_id": {
           "name": "fk_user_id",

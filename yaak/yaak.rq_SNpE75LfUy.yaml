@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_SNpE75LfUy
 createdAt: 2025-05-01T20:35:57.850177104
-updatedAt: 2025-05-01T20:38:17.375859596
+updatedAt: 2025-05-02T09:36:00.559938451
 workspaceId: wk_TVaGubpbwd
 folderId: fl_cyMCvXpfkd
 authentication: {}
@@ -10,7 +10,7 @@ authenticationType: null
 body:
   query: |-
     mutation {
-      addTenant(userId: "7feb1e80-20d1-4abb-8575-1722f884b858", roomId: "204c52ff-1398-4fa2-b9eb-bcc1fabd2191") {
+      addTenant(userId: "9fe09d39-1a3c-4d62-98d7-6851364bc4a2", roomId: "03d1f765-667b-48ea-887f-abeacadc153c") {
         id
         roomNumber
         userId

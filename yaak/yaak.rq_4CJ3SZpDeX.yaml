@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_4CJ3SZpDeX
 createdAt: 2025-05-01T19:08:12.501475947
-updatedAt: 2025-05-01T20:44:01.506523146
+updatedAt: 2025-05-02T09:20:31.368894128
 workspaceId: wk_TVaGubpbwd
 folderId: fl_vBb3DXY4o5
 authentication: {}
@@ -10,7 +10,7 @@ authenticationType: null
 body:
   query: |-
     mutation {
-        createUser(name: "Gustav", socialSecurityNumber: "000000-0000") {
+        createUser(name: "Amalie", socialSecurityNumber: "000000-0000") {
           name
           socialSecurityNumber
         }

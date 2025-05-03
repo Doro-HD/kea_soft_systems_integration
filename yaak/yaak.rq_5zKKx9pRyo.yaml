@@ -1,0 +1,32 @@
+type: http_request
+model: http_request
+id: rq_5zKKx9pRyo
+createdAt: 2025-05-02T09:55:57.989855319
+updatedAt: 2025-05-03T13:08:03.292365093
+workspaceId: wk_TVaGubpbwd
+folderId: fl_VHUv65Kefr
+authentication: {}
+authenticationType: null
+body:
+  query: |
+    mutation {
+      fileComplaint(
+        description: "Stealing from frigde"
+        complainantIds: ["3333dfca-102e-4660-bdd6-35af038bfdd2", "62706256-7dca-42d1-909f-03876566f401"]
+        complaineeIds: ["c424e50b-d5a4-4f82-9533-a8d0c93a88e2"]
+      ) {
+        description
+      }
+    }
+bodyType: graphql
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: qqCBKwFUZM
+method: POST
+name: file complaint
+sortPriority: 1000.0
+url: localhost:8787/graphql
+urlParameters: []
