@@ -1,0 +1,30 @@
+{
+  "name": "10b._database_migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "db:old:generate": "drizzle-kit generate --config oldDrizzle.config.ts",
+    "db:old:migrate": "drizzle-kit migrate --config oldDrizzle.config.ts",
+    "db:old:seed": "tsx ./src/seeder.ts",
+    "db:new:migrate:from:old": "tsx ./src/migrater.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "drizzle-kit": "^0.31.1",
+    "drizzle-orm": "^0.43.1",
+    "drizzle-seed": "^0.3.1",
+    "mongodb": "^6.16.0",
+    "mysql2": "^3.14.1",
+    "pg": "^8.15.6",
+    "tsx": "^4.19.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3"
+  }
+}

@@ -1,0 +1,24 @@
+services:
+  db_from:
+    image: postgres:17
+    ports:
+      - 5432:5432
+    volumes:
+      - /home/doro-hd/Docker/volumes/kea_si_10b/db_from:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: si-10b
+      POSTGRES_USER: si-10b
+      POSTGRES_PASSWORD: si-10b
+  db_to:
+    image: mongo:8
+    volumes:
+      - /home/doro-hd/Docker/volumes/kea_si_10b/db_to:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: si-10b
+      MONGO_INITDB_ROOT_PASSWORD: si-10b
+
+volumes:
+  db_from_volume:
+  db_to_volume:
