@@ -7,7 +7,7 @@ import { TResourceKind } from "@/services/webhookService";
 
 function getWebhooks(dbClient: D1Database, resourceKind: TResourceKind | undefined) {
   return execute(dbClient, (db) => {
-    let queryBuilder = db.select({ url: webhooksTable.url }).from(webhooksTable).$dynamic();
+    let queryBuilder = db.select().from(webhooksTable).$dynamic();
 
     if (resourceKind === 'users') {
       queryBuilder = queryBuilder.where(inArray(webhooksTable.eventKind, userEventKindSchema.options));
