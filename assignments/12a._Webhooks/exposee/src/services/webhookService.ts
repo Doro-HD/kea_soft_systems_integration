@@ -1,6 +1,6 @@
 import { createWebhook, getWebhooks } from "@/db/handler";
 import { TEventKind } from "@/db/schema";
-import { D1Database, Headers } from "@cloudflare/workers-types";
+import { D1Database } from "@cloudflare/workers-types";
 
 type TResourceKind = 'users' | 'rooms' | 'complaints';
 

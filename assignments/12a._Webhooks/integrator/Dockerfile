@@ -19,6 +19,9 @@ WORKDIR /app
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 hono
 
+RUN mkdir -p /observer_data/logs
+RUN chown -R hono:nodejs /observer_data
+
 USER hono
 EXPOSE 3000
 

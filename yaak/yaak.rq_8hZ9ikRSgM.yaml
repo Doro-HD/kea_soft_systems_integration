@@ -1,0 +1,27 @@
+type: http_request
+model: http_request
+id: rq_8hZ9ikRSgM
+createdAt: 2025-05-06T19:26:29.196363762
+updatedAt: 2025-05-06T19:31:19.726741990
+workspaceId: wk_TVaGubpbwd
+folderId: fl_7J8wSTZrFG
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "url": "http://localhost:8080",
+      "eventKind": "user-has-late-payments"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: aBr0NdihVE
+method: POST
+name: add user webhooks
+sortPriority: 0.0
+url: localhost:8787/users/webhooks
+urlParameters: []

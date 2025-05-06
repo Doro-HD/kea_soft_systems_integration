@@ -22,19 +22,28 @@ services:
     container_name: si-12a-alloy
     restart: unless-stopped
     volumes:
-      - app_data:/observer_data
+      - ./config.alloy:/etc/alloy/config.alloy
+      - log_data:/observer_data/logs
     networks:
       - observer
+    ports:
+      - 12345:12345
+    command: >
+      run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data
+      /etc/alloy/config.alloy
   app:
     image: kea-si-12a
     container_name: si-12a-app
+    user: hono
     volumes:
-      - app_data:/observer_data
+      - log_data:/observer_data/logs
+    ports:
+      - 8080:8080
 
 volumes:
   grafana_data:
   loki_data:
-  app_data:
+  log_data:
 
 networks:
   observer:

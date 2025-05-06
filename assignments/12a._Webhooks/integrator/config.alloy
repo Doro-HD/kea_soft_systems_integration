@@ -1,6 +1,6 @@
 // Collection: mount a local directory with a certain path spec
 local.file_match "applogs" {
-    path_targets = [{"__path__" = "/tmp/app-logs/app.log"}]
+    path_targets = [{"__path__" = "/observer_data/logs/app.log"}]
 }
 
 // Collection: Take the file match as input, and scrape those mounted log files
@@ -13,16 +13,18 @@ loki.source.file "local_files" {
 
 // Transformation: pull some data out of the log message, and turn it into a label
 loki.process "add_new_label" {
-    stage.logfmt {
-        mapping = {
-            "extracted_level" = "level",
+    stage.json {
+        expressions = {
+            extractedLevel = "level",
+            extractedEventKind = "eventKind",
         }
     }
 
     // Add the value of "extracted_level" from the extracted map as a "level" label
     stage.labels {
         values = {
-            "level" = "extracted_level",
+            "level" = "extractedLevel",
+            "event_kind" = "extractedEventKind",
         }
     }
 

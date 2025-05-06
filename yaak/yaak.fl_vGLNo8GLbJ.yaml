@@ -2,9 +2,9 @@ type: folder
 model: folder
 id: fl_vGLNo8GLbJ
 createdAt: 2025-05-01T07:30:47.188709807
-updatedAt: 2025-05-01T19:09:51.061063240
+updatedAt: 2025-05-06T19:29:58.997220241
 workspaceId: wk_TVaGubpbwd
 folderId: null
 name: 26._GraphQL
 description: ''
-sortPriority: 1000.0
+sortPriority: 3000.0
