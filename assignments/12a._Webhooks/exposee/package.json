@@ -1,0 +1,26 @@
+{
+  "name": "12a._webhook",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply kea_si_12a --local",
+    "db:migrate:remote": "wrangler d1 migrations apply kea_si_12a --remote"
+  },
+  "dependencies": {
+    "@hono/zod-openapi": "^0.19.6",
+    "@hono/zod-validator": "^0.4.3",
+    "drizzle-kit": "^0.31.1",
+    "drizzle-orm": "^0.43.1",
+    "hono": "^4.7.8",
+    "hono-openapi": "^0.4.8",
+    "zod": "^3.24.4",
+    "zod-openapi": "^4.2.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250505.0",
+    "wrangler": "^4.4.0"
+  }
+}
