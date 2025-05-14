@@ -1,96 +1,26 @@
 type Query {
-complaints: [Complaints!]!
-rooms(roomNumber: String): [Rooms!]!
-users: [Users!]!
+authors: [Author!]!
+author(id: String!): Author
+books: [Book!]!
+book(id: String!): Book
 }
-type Complaints {
+type Author {
 id: String!
-description: String!
-userAssociations: [UserAssociations!]!
+name: String
+books: [Book!]!
 }
-type UserAssociations {
+type Book {
 id: String!
-userId: String!
-complaintId: String!
-associationKind: COMPLAINANT_COMPLAINEE!
-user: User!
-complaint: Complaint!
-}
-type User {
-id: String!
-name: String!
-socialSecurityNumber: String!
-}
-type Complaint {
-id: String!
-description: String!
-}
-type Rooms {
-isVacant: Boolean!
-user: User_1
-complaints: Complaints_1!
-id: String!
-roomNumber: String!
-userId: String
-}
-type User_1 {
-id: String!
-name: String!
-socialSecurityNumber: String!
-}
-type Complaints_1 {
-kind: COMPLAINANT_COMPLAINEE
-id: String
-description: String
-}
-type Users {
-id: String!
-name: String!
-socialSecurityNumber: String!
-room: Room
-complaintAssociations: [ComplaintAssociations!]!
-}
-type Room {
-id: String!
-userId: String
-roomNumber: String!
-}
-type ComplaintAssociations {
-id: String!
-userId: String!
-complaintId: String!
-associationKind: COMPLAINANT_COMPLAINEE!
-user: User!
-complaint: Complaint!
+title: String
+releaseYear: Number
+authorId: String
+author: Author
 }
 type Mutation {
-fileComplaint(description: String!, complainantIds: [String!]!, complaineeIds: [String!]!): FileComplaint!
-createRoom(roomNumber: String!): CreateRoom!
-addTenant(userId: String!, roomId: String!): CreateRoom!
-createUser(name: String!, socialSecurityNumber: String!): CreateUser!
-deleteUser(userId: String!): CreateUser!
-}
-type FileComplaint {
-complainants: [Complainants!]!
-complainee: [Complainants!]!
-id: String!
-description: String!
-}
-type Complainants {
-id: String!
-userId: String!
-complaintId: String!
-associationKind: COMPLAINANT_COMPLAINEE!
-}
-type CreateRoom {
-id: String!
-userId: String
-roomNumber: String!
-}
-type CreateUser {
-id: String!
-name: String!
-socialSecurityNumber: String!
+createAuthor(name: String!): Author!
+updateBook(id: String!, name: String!): Author!
+deleteBook(id: String!): Author!
+createBook(authorId: String!, title: String!, releaseYear: Number): Book!
 }
 scalar ID
 scalar Int
@@ -104,7 +34,3 @@ scalar Date
 scalar JSON
 scalar String
 scalar Boolean
-enum COMPLAINANT_COMPLAINEE {
-	complainant
-	complainee
-}

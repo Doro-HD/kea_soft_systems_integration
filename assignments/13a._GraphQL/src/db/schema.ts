@@ -1,95 +1,40 @@
 import { relations } from "drizzle-orm";
-import { foreignKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { foreignKey, int, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-const usersTable = sqliteTable("users", {
+const authorTable = sqliteTable("authors", {
   id: text("id").primaryKey(),
-  name: text("name").notNull(),
-  socialSecurityNumber: text("social_security_number").notNull(),
+  name: text("name"),
 });
 
-const usersRelation = relations(usersTable, ({ one, many }) => {
+const authorsRelation = relations(authorTable, ({ many }) => {
   return {
-    room: one(roomsTable),
-    complaintAssociations: many(complaintsUserAssociationTable),
+    books: many(booksTable),
   };
 });
 
-const roomsTable = sqliteTable("rooms", {
-  id: text("id").primaryKey(),
-  roomNumber: text("room_number").notNull().unique(),
-  userId: text("user_id"),
-}, (table) => [
-  foreignKey({
-    name: "fk_user_id",
-    columns: [table.userId],
-    foreignColumns: [usersTable.id],
-  }),
-]);
-
-const roomsRelation = relations(roomsTable, ({ one }) => {
-  return {
-    user: one(usersTable, {
-      fields: [roomsTable.userId],
-      references: [usersTable.id],
-    }),
-  };
-});
-
-const complaintsTable = sqliteTable("complaints", {
-  id: text("id").primaryKey(),
-  description: text("description").notNull(),
-});
-
-const complainantsRelation = relations(complaintsTable, ({ many }) => {
-  return {
-    userAssociations: many(complaintsUserAssociationTable)
-  };
-});
-
-const complaintsUserAssociationTable = sqliteTable(
-  "complaints_user_association",
+const booksTable = sqliteTable(
+  "books",
   {
     id: text("id").primaryKey(),
-    userId: text("user_id").notNull(),
-    complaintId: text("complaint_id").notNull(),
-    associationKind: text("association_kind", {
-      enum: ["complainant", "complainee"],
-    }).notNull(),
+    title: text("title"),
+    releaseYear: int("release_year"),
+    authorId: text("author_id"),
   },
   (table) => [
     foreignKey({
-      name: "fk_user_id",
-      columns: [table.userId],
-      foreignColumns: [usersTable.id],
-    }),
-    foreignKey({
-      name: "fk_complaint_id",
-      columns: [table.complaintId],
-      foreignColumns: [complaintsTable.id],
+      columns: [table.authorId],
+      foreignColumns: [authorTable.id],
     }),
   ],
 );
 
-const complaintsUserAssociationRelation = relations(complaintsUserAssociationTable, ({ one }) => {
+const booksRelation = relations(booksTable, ({ one }) => {
   return {
-    user: one(usersTable, {
-      fields: [complaintsUserAssociationTable.userId],
-      references: [usersTable.id]
+    author: one(authorTable, {
+      fields: [booksTable.authorId],
+      references: [authorTable.id],
     }),
-    complaint: one(complaintsTable, {
-      fields: [complaintsUserAssociationTable.complaintId],
-      references: [complaintsTable.id]
-    })
-  }
-})
+  };
+});
 
-export {
-  complaintsTable,
-  complainantsRelation,
-  complaintsUserAssociationTable,
-  complaintsUserAssociationRelation,
-  roomsRelation,
-  roomsTable,
-  usersRelation,
-  usersTable,
-};
+export { authorTable, authorsRelation, booksTable, booksRelation };

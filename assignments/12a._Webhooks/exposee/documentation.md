@@ -1,5 +1,6 @@
 # 12a - Webhooks documentation
-The project is hosted on [Cloudflare](https://kea-si-12a-webhook.sid-doro-hd.workers.dev), you should automatically be redirected to "/doc/ui" where the OpenAPI docs are displayed using Swagger.
+The project is hosted on [Cloudflare](https://12a-_webhook.sid-doro-hd.workers.dev), you should automatically be redirected to "/doc/ui" where the OpenAPI docs are displayed using Swagger.
+
 
 ## API
 This project aims to emulate a dorm system that allows for webhooks. There are three types of resources, "users", "rooms" and "complaints". Each of these resources have their own endpoints where you can register webhooks using a post request. Note that these endpoints only allow for event kinds associated with the specified resource.

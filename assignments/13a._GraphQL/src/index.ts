@@ -1,19 +1,16 @@
 import { app } from "@getcronit/pylon";
 
-import * as usersResolver from "@/resolvers/usersResolver";
-import * as roomsResolver from "@/resolvers/roomsResolver";
-import * as complaintsResolver from "@/resolvers/complaintsResolver";
+import * as booksResolver from "@/resolvers/booksResolver";
+import * as authorResolver from "@/resolvers/authorsResolver";
 
 export const graphql = {
   Query: {
-    ...usersResolver.queryResolvers,
-    ...roomsResolver.queryResolvers,
-    ...complaintsResolver.queryResolvers,
+    ...booksResolver.queryResolvers,
+    ...authorResolver.queryResolvers,
   },
   Mutation: {
-    ...usersResolver.mutationResolvers,
-    ...roomsResolver.mutationResolvers,
-    ...complaintsResolver.mutationResolvers,
+    ...booksResolver.mutationResolvers,
+    ...authorResolver.mutationResolvers,
   },
 };
 

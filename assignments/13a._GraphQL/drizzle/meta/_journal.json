@@ -5,36 +5,15 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1746121965373,
-      "tag": "0000_ancient_beast",
+      "when": 1747229856457,
+      "tag": "0000_fine_fantastic_four",
       "breakpoints": true
     },
     {
       "idx": 1,
       "version": "6",
-      "when": 1746130970302,
-      "tag": "0001_redundant_fenris",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "6",
-      "when": 1746184749065,
-      "tag": "0002_tranquil_magus",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "6",
-      "when": 1746184842324,
-      "tag": "0003_chemical_korvac",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "6",
-      "when": 1746187335930,
-      "tag": "0004_outgoing_fat_cobra",
+      "when": 1747230831087,
+      "tag": "0001_flimsy_maria_hill",
       "breakpoints": true
     }
   ]

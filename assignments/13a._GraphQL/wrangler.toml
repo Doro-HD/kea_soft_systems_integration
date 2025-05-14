@@ -39,7 +39,7 @@ compatibility_flags = ["nodejs_compat_v2"]
 [[d1_databases]]
 binding = "DB"
 database_name = "kea_si_13a"
-database_id = "ecce0497-ffc6-4139-81f9-d4f809bcaef4"
+database_id = "6447f763-c23b-445f-9e09-8834b6d171a3"
 migrations_dir = "drizzle"
 
 # Bind a dispatch namespace. Use Workers for Platforms to deploy serverless functions programmatically on behalf of your customers.
