@@ -2,17 +2,21 @@ type: http_request
 model: http_request
 id: rq_cRadiU9Vw7
 createdAt: 2025-05-14T10:10:42.074777498
-updatedAt: 2025-05-14T10:10:57.102962814
+updatedAt: 2025-05-14T10:34:24.961392078
 workspaceId: wk_TVaGubpbwd
 folderId: fl_cuKh3n9fgQ
 authentication: {}
 authenticationType: null
 body: {}
-bodyType: null
+bodyType: application/json
 description: ''
-headers: []
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: tTYvMJ6jwE
 method: GET
 name: ping webhook
-sortPriority: 1000.0
-url: http://rugaard.loca.lt/register
+sortPriority: 2000.0
+url: http://rugaard.loca.lt/ping
 urlParameters: []

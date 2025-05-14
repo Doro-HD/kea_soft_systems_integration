@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_uGzzPszeD6
 createdAt: 2025-05-14T10:04:15.307111901
-updatedAt: 2025-05-14T10:10:49.561810095
+updatedAt: 2025-05-14T11:35:38.669689292
 workspaceId: wk_TVaGubpbwd
 folderId: fl_cuKh3n9fgQ
 authentication: {}
@@ -10,7 +10,7 @@ authenticationType: null
 body:
   text: |-
     {
-      "url": "https://your-webhook-url.com/endpoint",
+      "url": "https://rnnrj-195-249-146-100.a.free.pinggy.link/lasse",
       "events": ["payment_processed", "invoice_paid"]
     }
 bodyType: application/json
@@ -22,6 +22,6 @@ headers:
   id: dM7h8uhG6F
 method: POST
 name: register webhook
-sortPriority: 0.0
+sortPriority: 1000.0
 url: http://rugaard.loca.lt/register
 urlParameters: []

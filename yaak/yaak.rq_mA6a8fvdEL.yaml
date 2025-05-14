@@ -1,0 +1,18 @@
+type: http_request
+model: http_request
+id: rq_mA6a8fvdEL
+createdAt: 2025-05-14T10:34:05.438196369
+updatedAt: 2025-05-14T10:34:24.961014933
+workspaceId: wk_TVaGubpbwd
+folderId: fl_cuKh3n9fgQ
+authentication: {}
+authenticationType: null
+body: {}
+bodyType: null
+description: ''
+headers: []
+method: GET
+name: list all webhooks
+sortPriority: 0.0
+url: http://rugaard.loca.lt/webhooks
+urlParameters: []
