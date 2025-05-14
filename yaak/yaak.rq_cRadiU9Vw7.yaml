@@ -1,10 +1,10 @@
 type: http_request
 model: http_request
-id: rq_T6BwoVN3rB
-createdAt: 2025-05-06T19:31:07.927910703
-updatedAt: 2025-05-14T10:04:03.114083773
+id: rq_cRadiU9Vw7
+createdAt: 2025-05-14T10:10:42.074777498
+updatedAt: 2025-05-14T10:10:57.102962814
 workspaceId: wk_TVaGubpbwd
-folderId: fl_aoo9Kg7btE
+folderId: fl_cuKh3n9fgQ
 authentication: {}
 authenticationType: null
 body: {}
@@ -12,7 +12,7 @@ bodyType: null
 description: ''
 headers: []
 method: GET
-name: ping user webhook
+name: ping webhook
 sortPriority: 1000.0
-url: localhost:8787/users/webhooks/ping
+url: http://rugaard.loca.lt/register
 urlParameters: []

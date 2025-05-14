@@ -1,0 +1,27 @@
+type: http_request
+model: http_request
+id: rq_uGzzPszeD6
+createdAt: 2025-05-14T10:04:15.307111901
+updatedAt: 2025-05-14T10:10:49.561810095
+workspaceId: wk_TVaGubpbwd
+folderId: fl_cuKh3n9fgQ
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "url": "https://your-webhook-url.com/endpoint",
+      "events": ["payment_processed", "invoice_paid"]
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: dM7h8uhG6F
+method: POST
+name: register webhook
+sortPriority: 0.0
+url: http://rugaard.loca.lt/register
+urlParameters: []
